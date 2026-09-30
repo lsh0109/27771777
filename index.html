@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歷史課文填空（20題進階版）</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+            line-height: 1.8;
+            background-color: #f4f6f9;
+            color: #333;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            background-color: #e8f4f8;
+            color: #2980b9;
+            padding: 8px 15px;
+            border-left: 5px solid #3498db;
+            margin-top: 30px;
+            border-radius: 3px;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .q-container {
+            display: inline-block;
+            position: relative;
+            margin: 2px 4px;
+        }
+        .q-num {
+            font-weight: bold;
+            color: #e67e22;
+        }
+        input[type="text"] {
+            border: none;
+            border-bottom: 2px solid #bdc3c7;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 2px 5px;
+            transition: all 0.3s;
+            outline: none;
+        }
+        input[type="text"]:focus {
+            border-bottom-color: #3498db;
+            background-color: #f0f8ff;
+        }
+        input.correct {
+            border-bottom-color: #2ecc71 !important;
+            background-color: #e8f8f5 !important;
+            color: #27ae60;
+        }
+        input.incorrect {
+            border-bottom-color: #e74c3c !important;
+            background-color: #fadbd8 !important;
+            color: #c0392b;
+        }
+        .hint-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 0 2px;
+            opacity: 0.7;
+        }
+        .hint-btn:hover {
+            opacity: 1;
+        }
+        .wrong-ans-text {
+            color: #e74c3c;
+            font-size: 13px;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            margin-top: -2px;
+        }
+        .btn-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button.action-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background 0.3s;
+            margin: 0 5px;
+        }
+        button.action-btn:hover {
+            background-color: #2980b9;
+        }
+        #timer {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #d35400;
+            margin-bottom: 10px;
+        }
+        #result {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .leaderboard {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .leaderboard h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        .leaderboard ol {
+            padding-left: 20px;
+        }
+        .leaderboard li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>第 2 章 商周至隋唐的民族與文化</h1>
+    <div id="timer">⏱️ 答題時間：<span id="time-display">0</span> 秒</div>
+
+    <div class="section">
+        <h2>2-1 商周至隋唐的民族關係</h2>
+        
+        <h3>一、商周至秦漢的民族互動與交流</h3>
+        <p>
+            商周以來，農業民族與草原民族已有互動與衝突。東周時代，黃河流域各國為防禦北方興起的
+            <span class="q-container">
+                <span class="q-num">(1)</span><input type="text" id="q1" data-ans="匈奴" data-hint="北方游牧民族，秦漢時期的主要對手" style="width: 70px;">
+                <button class="hint-btn" onclick="showHint('q1')">💡</button>
+            </span>
+            而修築長城。秦國統一後，將各國長城連接，此後長城大致成為農業文化與草原文化的分界線[cite: 1]。<br>
+            漢初國力較弱採和親政策。漢武帝時國力轉強，派遣
+            <span class="q-container">
+                <span class="q-num">(2)</span><input type="text" id="q2" data-ans="張騫" data-hint="出使西域，開闢絲路的人" style="width: 70px;">
+                <button class="hint-btn" onclick="showHint('q2')">💡</button>
+            </span>
+            出使
+            <span class="q-container">
+                <span class="q-num">(3)</span><input type="text" id="q3" data-ans="西域" data-hint="玉門關、陽關以西的地區" style="width: 70px;">
+                <button class="hint-btn" onclick="showHint('q3')">💡</button>
+            </span>
+            ，聯絡各國對抗匈奴[cite: 1]。此舉增進對該地的認識，東西貿易更為活絡，音樂物產也藉由
+            <span class="q-container">
+                <span class="q-num">(4)</span><input type="text" id="q4" data-ans="絲路,絲綢之路" data-hint="連接東西方貿易的陸上通道" style="width: 70px;">
+                <button class="hint-btn" onclick="showHint('q4')">💡</button>
+            </span>
+            傳入中國[cite: 1]。漢代末年，北方草原民族南遷，被漢人通稱為「
+            <span class="q-container">
+                <span class="q-num">(5)</span><input type="text" id="q5" data-ans="胡" data-hint="單一字，古代對北方非漢族的外族的統稱" style="width: 50px;">
+                <button class="hint-btn" onclick="showHint('q5')">💡</button>
+            </span>
+            」[cite: 1]。
+        </p>
+
+        <h3>二、魏晉南北朝至隋唐的民族融合</h3>
+        <p>
+            西晉末年爆發「
+            <span class="q-container">
+                <span class="q-num">(6)</span><input type="text" id="q6" data-ans="永嘉之禍" style="width: 100px;" data-hint="西晉末年胡人入侵導致晉室南遷的事件">
+                <button class="hint-btn" onclick="showHint('q6')">💡</button>
+            </span>
+            」，戰亂使大批漢人隨晉室南遷，加速了南方的開發[cite: 1]。<br>
+            胡族君主致力於胡漢融合。其中，
+            <span class="q-container">
+                <span class="q-num">(7)</span><input type="text" id="q7" data-ans="鮮卑,鮮卑族" style="width: 70px;" data-hint="建立北魏的民族">
+                <button class="hint-btn" onclick="showHint('q7')">💡</button>
+            </span>
+            族君主北魏
+            <span class="q-container">
+                <span class="q-num">(8)</span><input type="text" id="q8" data-ans="孝文帝" style="width: 90px;" data-hint="推行全面漢化政策的北魏皇帝">
+                <button class="hint-btn" onclick="showHint('q8')">💡</button>
+            </span>
+            積極推行漢化，將首都遷都到
+            <span class="q-container">
+                <span class="q-num">(9)</span><input type="text" id="q9" data-ans="洛陽" style="width: 70px;" data-hint="北魏孝文帝遷都的新地點">
+                <button class="hint-btn" onclick="showHint('q9')">💡</button>
+            </span>
+            ，並要求說漢語、穿漢服、改漢姓、鼓勵通婚[cite: 1]。<br>
+            唐太宗擊滅東突厥後，西北各族君主尊稱唐太宗為「
+            <span class="q-container">
+                <span class="q-num">(10)</span><input type="text" id="q10" data-ans="天可汗" style="width: 90px;" data-hint="尊稱，意為天下共主的君王">
+                <button class="hint-btn" onclick="showHint('q10')">💡</button>
+            </span>
+            」，唐帝國成為東亞秩序的盟主[cite: 1]。
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>2-2 各民族文化的交流與影響</h2>
+        
+        <h3>一、外來宗教的輸入</h3>
+        <p>
+            <span class="q-container">
+                <span class="q-num">(11)</span><input type="text" id="q11" data-ans="佛教" style="width: 70px;" data-hint="起源於印度的世界宗教">
+                <button class="hint-btn" onclick="showHint('q11')">💡</button>
+            </span>
+            起源於印度，漢代傳入中國[cite: 2]。唐初
+            <span class="q-container">
+                <span class="q-num">(12)</span><input type="text" id="q12" data-ans="玄奘,三藏,玄奘法師" style="width: 70px;" data-hint="前往印度取經的高僧">
+                <button class="hint-btn" onclick="showHint('q12')">💡</button>
+            </span>
+            前往印度取經，主持佛經翻譯，進一步促進其中國化[cite: 2]。此外，
+            <span class="q-container">
+                <span class="q-num">(13)</span><input type="text" id="q13" data-ans="伊斯蘭教,回教" style="width: 100px;" data-hint="阿拉伯大食人信仰的宗教">
+                <button class="hint-btn" onclick="showHint('q13')">💡</button>
+            </span>
+            也在唐代傳入中國[cite: 2]。
+        </p>
+
+        <h3>二、兼容並蓄的文化風貌</h3>
+        <p>
+            唐人的生活深受西域文化影響。首都
+            <span class="q-container">
+                <span class="q-num">(14)</span><input type="text" id="q14" data-ans="長安" style="width: 70px;" data-hint="唐朝首都（今西安）">
+                <button class="hint-btn" onclick="showHint('q14')">💡</button>
+            </span>
+            胡商雲集，胡食、胡服、胡樂、胡舞等非常盛行[cite: 2]。
+        </p>
+
+        <h3>三、唐文化的向外傳播</h3>
+        <ol>
+            <li>
+                <strong>新羅：</strong> 全力模仿中國文化與制度，因有「
+                <span class="q-container">
+                    <span class="q-num">(15)</span><input type="text" id="q15" data-ans="君子國" style="width: 90px;" data-hint="形容朝鮮半島新羅國的美譽">
+                    <button class="hint-btn" onclick="showHint('q15')">💡</button>
+                </span>
+                」之稱[cite: 2]。
+            </li>
+            <li>
+                <strong>日本：</strong> 7 世紀中期以唐代制度為根本，展開唐化運動，史稱「
+                <span class="q-container">
+                    <span class="q-num">(16)</span><input type="text" id="q16" data-ans="大化革新" style="width: 100px;" data-hint="日本仿效唐制的政治改革">
+                    <button class="hint-btn" onclick="showHint('q16')">💡</button>
+                </span>
+                」[cite: 2]。
+            </li>
+            <li>
+                <strong>吐蕃：</strong> 唐太宗時
+                <span class="q-container">
+                    <span class="q-num">(17)</span><input type="text" id="q17" data-ans="文成公主" style="width: 100px;" data-hint="遠嫁西域吐蕃的唐朝公主">
+                    <button class="hint-btn" onclick="showHint('q17')">💡</button>
+                </span>
+                嫁到吐蕃（今西藏），將文化與農業技術引入當地[cite: 2]。
+            </li>
+            <li>
+                <strong>大食與造紙術：</strong> 造紙術在漢代由
+                <span class="q-container">
+                    <span class="q-num">(18)</span><input type="text" id="q18" data-ans="蔡倫" style="width: 70px;" data-hint="改進造紙術的東漢太監">
+                    <button class="hint-btn" onclick="showHint('q18')">💡</button>
+                </span>
+                改進[cite: 2]。唐代時，唐朝軍隊與大食交戰於
+                <span class="q-container">
+                    <span class="q-num">(19)</span><input type="text" id="q19" data-ans="怛羅斯,怛邏斯" style="width: 80px;" data-hint="造紙術西傳的關鍵戰役名稱">
+                    <button class="hint-btn" onclick="showHint('q19')">💡</button>
+                </span>
+                ，唐軍戰敗，俘虜中的工匠使造紙術西傳[cite: 2]。後來日本根據漢字楷書偏旁創立片假名，平假名則仿自
+                <span class="q-container">
+                    <span class="q-num">(20)</span><input type="text" id="q20" data-ans="草書" style="width: 70px;" data-hint="一種漢字書法字體，平假名由此演變而來">
+                    <button class="hint-btn" onclick="showHint('q20')">💡</button>
+                </span>
+               [cite: 2]。
+            </li>
+        </ol>
+    </div>
+
+    <div class="btn-container">
+        <button class="action-btn" onclick="checkAnswers()">送出並檢查答案</button>
+        <button class="action-btn" onclick="resetForm()" style="background-color: #95a5a6;">重置練習</button>
+    </div>
+
+    <div id="result"></div>
+
+    <div class="leaderboard">
+        <h3>🏆 英雄排行榜 (Top 5)</h3>
+        <ol id="leaderboard-list">
+            <li>尚無紀錄</li>
+        </ol>
+        <button onclick="clearLeaderboard()" style="font-size: 12px; color: #888; border: none; background: none; cursor: pointer; text-decoration: underline;">清除排行榜記錄</button>
+    </div>
+
+    <script>
+        let timerInterval;
+        let secondsPassed = 0;
+        let isSubmitted = false;
+
+        // 計時器啟動
+        window.onload = function() {
+            startTimer();
+            loadLeaderboard();
+        };
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            secondsPassed = 0;
+            isSubmitted = false;
+            document.getElementById('time-display').innerText = secondsPassed;
+            timerInterval = setInterval(() => {
+                secondsPassed++;
+                document.getElementById('time-display').innerText = secondsPassed;
+            }, 1000);
+        }
+
+        // 提示功能
+        function showHint(id) {
+            const input = document.getElementById(id);
+            const hint = input.getAttribute('data-hint');
+            alert(`💡 提示：${hint}`);
+        }
+
+        // 錯字矯正與清理標準（轉小寫、去除全半形空格、統一標點）
+        function cleanText(text) {
+            return text.trim()
+                       .toLowerCase()
+                       .replace(/[\s\u3000]+/g, '') // 去除空格
+                       .replace(/[，。；：]/g, '');  // 去除標點
+        }
+
+        // 檢查答案
+        function checkAnswers() {
+            if(isSubmitted) return;
+            
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let correctCount = 0;
+
+            // 清除之前的錯題解答提示
+            document.querySelectorAll('.wrong-ans-text').forEach(el => el.remove());
+
+            inputs.forEach(input => {
+                const userVal = cleanText(input.value);
+                const validAnswers = input.getAttribute('data-ans').split(',').map(a => cleanText(a));
+                
+                // 比對（若包含任一正確詞即算對）
+                const isCorrect = validAnswers.some(ans => userVal === ans);
+
+                if (isCorrect && userVal !== "") {
+                    input.className = 'correct';
+                    correctCount++;
+                } else {
+                    input.className = 'incorrect';
+                    // 顯示正確答案在輸入框下方
+                    const primaryAns = input.getAttribute('data-ans').split(',')[0];
+                    const ansSpan = document.createElement('span');
+                    ansSpan.className = 'wrong-ans-text';
+                    ansSpan.innerText = `(${primaryAns})`;
+                    input.parentNode.appendChild(ansSpan);
+                }
+            });
+
+            clearInterval(timerInterval);
+            isSubmitted = true;
+
+            const score = correctCount * 5; // 每題 5 分，滿分 100
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `答對 ${correctCount} / ${inputs.length} 題！<br>得分：<span style="color:#e67e22; font-size: 24px;">${score}</span> 分 | 耗時：${secondsPassed} 秒`;
+
+            // 保存排行榜
+            saveToLeaderboard(score, secondsPassed);
+        }
+
+        // 重置表單
+        function resetForm() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            inputs.forEach(input => {
+                input.value = '';
+                input.className = '';
+            });
+            document.querySelectorAll('.wrong-ans-text').forEach(el => el.remove());
+            document.getElementById('result').innerText = '';
+            startTimer();
+        }
+
+        // 排行榜存取功能 (LocalStorage)
+        function saveToLeaderboard(score, time) {
+            let leaderboard = JSON.parse(localStorage.getItem('history_quiz_lb')) || [];
+            
+            const name = prompt("恭喜完成測驗！請輸入您的名字留名排行榜：", "無名英雄") || "無名英雄";
+            
+            leaderboard.push({ name: name, score: score, time: time, date: new Date().toLocaleDateString() });
+            
+            // 排序：分數高優先，分數相同則時間少優先
+            leaderboard.sort((a, b) => b.score - a.score || a.time - b.time);
+            
+            // 保留前 5 名
+            leaderboard = leaderboard.slice(0, 5);
+            
+            localStorage.setItem('history_quiz_lb', JSON.stringify(leaderboard));
+            loadLeaderboard();
+        }
+
+        function loadLeaderboard() {
+            const leaderboard = JSON.parse(localStorage.getItem('history_quiz_lb')) || [];
+            const listEl = document.getElementById('leaderboard-list');
+            listEl.innerHTML = '';
+
+            if (leaderboard.length === 0) {
+                listEl.innerHTML = '<li>尚無紀錄，快來成為第一個挑戰者吧！</li>';
+                return;
+            }
+
+            leaderboard.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${item.name}</strong> - ${item.score}分 (${item.time}秒) <small style="color:#888;">[${item.date}]</small>`;
+                listEl.appendChild(li);
+            });
+        }
+
+        function clearLeaderboard() {
+            if (confirm("確定要清除排行榜紀錄嗎？")) {
+                localStorage.removeItem('history_quiz_lb');
+                loadLeaderboard();
+            }
+        }
+    </script>
+
+</body>
+</html>
